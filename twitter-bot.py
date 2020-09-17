@@ -14,7 +14,7 @@ def init_tweepy():
 def init_giphy():
     # create an instance of the API class
     api_instance = giphy_client.DefaultApi()
-    api_key = 'Qos2ut9wu6XBN2woR6LmNkb9uS46e7QV'  # str | Giphy API Key.
+    api_key = YOUR_API_KEY  # str | Giphy API Key.
     q = 'puppy'  # str | Search query term or phrase.
     limit = 1  # int | The maximum number of records to return. (optional) (default to 25)
     offset = 0  # int | An optional results offset. Defaults to 0. (optional) (default to 0)
