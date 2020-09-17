@@ -19,13 +19,13 @@ def init_giphy():
     limit = 1  # int | The maximum number of records to return. (optional) (default to 25)
     offset = 0  # int | An optional results offset. Defaults to 0. (optional) (default to 0)
     rating = 'g'  # str | Filters results by specified rating. (optional)
-    lang = 'en'  # str | Specify default country for regional content; use a 2-letter ISO 639-1 country code. See list of supported languages <a href = \"../language-support\">here</a>. (optional)
+    lang = 'en'  # str | Specify default country for regional content; use a 2-letter ISO 639-1 country code. See
+    # list of supported languages <a href = \"../language-support\">here</a>. (optional)
     fmt = 'json'  # str | Used to indicate the expected response format. Default is Json. (optional) (default to json)
-    api_response = api_instance.gifs_search_get(api_key, q, limit=limit, offset=offset, rating=rating, lang=lang, fmt=fmt)
+    api_response = api_instance.gifs_search_get(api_key, q, limit=limit, offset=offset, rating=rating, lang=lang,
+                                                fmt=fmt)
     print(api_response.data[0])
     print(json.dump(api_response.data[0], ))
-
-
 
 
 # data=json.loads(urllib("http://api.giphy.com/v1/gifs/search?q=puppy&api_key=" + YOUR_API_KEY + "&limit=5").read())
@@ -51,9 +51,9 @@ def tweet(tweet_msg):
 
 
 def modifier(s):
-    '''
+    """
     returns hashtags based on the GIF names from GIPHY
-    '''
+    """
     ms = ''
     for i in range(len(s)):
         if s[i] == '-':
@@ -67,12 +67,13 @@ def modifier(s):
 
 
 def gif_download(gif_url):
-    '''
+    """
     Takes the URL of an Image/GIF and downloads it
-    '''
+    """
     gif_data = requests.get(gif_url).content
     with open('image.gif', 'wb') as handler:
         handler.write(gif_data)
         handler.close()
+
 
 init_giphy()
